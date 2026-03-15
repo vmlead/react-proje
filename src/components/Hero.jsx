@@ -1,23 +1,83 @@
 import { motion } from "framer-motion";
+import meImage from "../assets/me.png";
 
 function Hero() {
   return (
-    <section id="home" className="h-screen flex flex-col justify-center items-center text-center px-4">
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-bold text-slate-900 dark:text-white sm:text-6xl"
-      >
-        Hi, I'm Vivek ??
-      </motion.h1>
+    <section id="home" className="min-h-screen flex items-center px-4 py-16">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="text-center lg:text-left"
+        >
+          <h1 className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
+            Hi, I'm Vivek
+          </h1>
+          <h2 className="mt-4 text-2xl font-semibold text-slate-300">
+            Full Stack Developer
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-slate-400 max-w-2xl">
+            Passionate Full Stack Developer specializing in React, Node.js, and modern web technologies.
+            I create scalable, user-friendly applications with clean code and innovative solutions.
+          </p>
 
-      <p className="mt-4 text-base text-slate-600 dark:text-slate-200 sm:text-lg">
-        Full Stack Developer | React | Node.js | TypeScript
-      </p>
+          <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">2+</div>
+              <div className="text-sm text-slate-400">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">10+</div>
+              <div className="text-sm text-slate-400">Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">3</div>
+              <div className="text-sm text-slate-400">Companies</div>
+            </div>
+          </div>
 
-      <button className="mt-6 rounded-lg bg-slate-900 px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-slate-200">
-        View Projects
-      </button>
+          <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+            <a
+              href="#contact"
+              className="rounded-lg bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-slate-200"
+            >
+              Let's Work Together
+            </a>
+            <a
+              href="#projects"
+              className="rounded-lg border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 shadow-sm transition hover:bg-slate-800"
+            >
+              View Projects
+            </a>
+          </div>
+
+          <div className="mt-6 flex justify-center lg:justify-start gap-4">
+            <a href="https://linkedin.com" className="text-slate-400 hover:text-white">
+              LinkedIn
+            </a>
+            <a href="https://github.com" className="text-slate-400 hover:text-white">
+              GitHub
+            </a>
+            <a href="mailto:your.email@example.com" className="text-slate-400 hover:text-white">
+              Email
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="flex justify-center lg:justify-end"
+        >
+          <div className="w-80 h-80 rounded-full overflow-hidden shadow-lg">
+            <img
+              src={meImage}
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
