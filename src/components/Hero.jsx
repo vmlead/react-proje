@@ -61,6 +61,13 @@ function Hero() {
             <a href="mailto:vikarp91@gmail.com" className="text-slate-400 hover:text-white">
               Email
             </a>
+            <a
+              href="/react-proje/Resume-Mar26FE.pdf"
+              download
+              className="inline-block hover:bg-green-700 text-white font-bold px-4 rounded transition duration-300"
+            >
+              Resume
+            </a>
           </div>
         </motion.div>
 
