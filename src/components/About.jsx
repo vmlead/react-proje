@@ -32,6 +32,13 @@ function About() {
               My expertise spans across frontend and backend development, with a focus on delivering
               high-quality solutions that drive business value.
             </p>
+            <a
+              href="/react-proje/Resume-Mar26FE.pdf"
+              download
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 mb-6"
+            >
+              Download Resume
+            </a>
           </motion.div>
 
           <motion.div
@@ -41,11 +48,11 @@ function About() {
             className="grid grid-cols-2 gap-6"
           >
             <div className="text-center p-6 bg-slate-800 rounded-lg">
-              <div className="text-3xl font-bold text-white">2+</div>
+              <div className="text-3xl font-bold text-white">6+</div>
               <div className="text-sm text-slate-400">Years Experience</div>
             </div>
             <div className="text-center p-6 bg-slate-800 rounded-lg">
-              <div className="text-3xl font-bold text-white">10+</div>
+              <div className="text-3xl font-bold text-white">20+</div>
               <div className="text-sm text-slate-400">Projects Delivered</div>
             </div>
             <div className="text-center p-6 bg-slate-800 rounded-lg">

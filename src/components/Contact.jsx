@@ -34,7 +34,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-white">Email</p>
-                  <p className="text-slate-400">your.email@example.com</p>
+                  <p className="text-slate-400">vikarp91@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -43,7 +43,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-white">Location</p>
-                  <p className="text-slate-400">Your City, Country</p>
+                  <p className="text-slate-400">Gurugram, India</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -52,7 +52,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="font-medium text-white">Phone</p>
-                  <p className="text-slate-400">+1 (123) 456-7890</p>
+                  <p className="text-slate-400">+91 8582913331</p>
                 </div>
               </div>
             </div>
@@ -61,13 +61,13 @@ function Contact() {
                 Available for freelance & full-time opportunities
               </p>
               <div className="flex gap-4">
-                <a href="https://linkedin.com" className="text-slate-400 hover:text-white">
+                <a href="https://www.linkedin.com/in/vik1991/" className="text-slate-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
-                <a href="https://github.com" className="text-slate-400 hover:text-white">
+                <a href="https://github.com/vmlead" className="text-slate-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </a>
-                <a href="https://twitter.com" className="text-slate-400 hover:text-white">
+                <a href="#" className="text-slate-400 hover:text-white">
                   Twitter
                 </a>
               </div>

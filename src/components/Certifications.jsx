@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const certifications = [
   {
-    title: "React Developer Certification",
-    issuer: "Meta",
-    date: "2023",
+    title: "React: Creating and Hosting a Full-Stack Site",
+    issuer: "LinkedIn Learning",
+    date: "2022",
     skills: ["React", "JavaScript", "Web Development"]
   },
   {
-    title: "Node.js Certification",
-    issuer: "OpenJS Foundation",
-    date: "2023",
-    skills: ["Node.js", "Backend Development", "APIs"]
+    title: "Atlassian Agile Project Management Professional Certificate",
+    issuer: "Atlassian",
+    date: "2025",
+    skills: ["Agile Methodologies", "Project Management"]
   },
   {
-    title: "TypeScript Certification",
+    title: "Career Essentials in Generative AI by Microsoft and LinkedIn",
     issuer: "Microsoft",
     date: "2024",
-    skills: ["TypeScript", "JavaScript", "Type Safety"]
+    skills: ["Generative AI",  "AI Technologies"]
   }
 ];
 

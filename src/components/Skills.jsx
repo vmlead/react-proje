@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const techStack = {
-  Frontend: ["React", "JavaScript", "TypeScript", "HTML5/CSS3", "Tailwind CSS"],
-  Backend: ["Node.js", "Express", "Python", "REST APIs"],
+  Frontend: ["React", "Vuejs", "JavaScript", "TypeScript", "HTML5/CSS3", "Tailwind CSS"],
+  Backend: ["Node.js", "Express", "Java", "REST APIs"],
   "Tools & Platforms": ["Git", "VS Code", "Figma", "Postman"],
   "Currently Focusing On": ["Next.js", "TypeScript", "Performance Optimization"]
 };

@@ -17,21 +17,21 @@ function Hero() {
             Full Stack Developer
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-400 max-w-2xl">
-            Passionate Full Stack Developer specializing in React, Node.js, and modern web technologies.
+            Passionate Full Stack Developer specializing in React, Vue, Node.js, and modern web technologies.
             I create scalable, user-friendly applications with clean code and innovative solutions.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">2+</div>
+              <div className="text-2xl font-bold text-white">6+</div>
               <div className="text-sm text-slate-400">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">10+</div>
+              <div className="text-2xl font-bold text-white">20+</div>
               <div className="text-sm text-slate-400">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white">3</div>
+              <div className="text-2xl font-bold text-white">4</div>
               <div className="text-sm text-slate-400">Companies</div>
             </div>
           </div>
@@ -52,13 +52,13 @@ function Hero() {
           </div>
 
           <div className="mt-6 flex justify-center lg:justify-start gap-4">
-            <a href="https://linkedin.com" className="text-slate-400 hover:text-white">
+            <a href="https://linkedin.com/in/vivek" className="text-slate-400 hover:text-white" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com" className="text-slate-400 hover:text-white">
+            <a href="https://github.com/vivek" className="text-slate-400 hover:text-white" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a href="mailto:your.email@example.com" className="text-slate-400 hover:text-white">
+            <a href="mailto:vikarp91@gmail.com" className="text-slate-400 hover:text-white">
               Email
             </a>
           </div>
