@@ -115,7 +115,7 @@ function Contact() {
                 <a
               href="/react-proje/Resume-Mar26FE.pdf"
               download
-              className="inline-block hover:bg-green-700 text-white font-bold px-4 rounded transition duration-300"
+              className="inline-block hover:bg-slate-600 text-white font-bold px-4 rounded transition duration-300"
             >
               Resume
             </a>

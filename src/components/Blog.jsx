@@ -47,10 +47,10 @@ function Blog() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold text-black dark:text-white sm:text-4xl">
             Latest Insights
           </h2>
-          <p className="mt-4 text-lg text-slate-400">
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
             Sharing knowledge about modern web development
           </p>
         </motion.div>

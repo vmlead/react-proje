@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -15,9 +16,10 @@ function Navbar({ darkMode, onToggleTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur shadow-sm border-b border-slate-200 dark:bg-slate-950/70 dark:border-slate-800">
+    <nav className="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur shadow-sm border-b border-slate-200 dark:bg-gray-900/70 dark:border-gray-700">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
-        <a href="#home" className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+        <a href="#home" className="flex items-center gap-2 text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
+          <img src="vmLogo.png" alt="VM Logo" className="h-8 w-8" />
           Vivek.dev
         </a>
 
@@ -27,14 +29,14 @@ function Navbar({ darkMode, onToggleTheme }) {
             size="small"
             color="inherit"
             aria-label="Toggle dark mode"
-            className="text-slate-600 hover:text-slate-900 dark:text-slate-200"
+            className="text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white"
           >
             {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500 dark:text-slate-200 md:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500 dark:text-gray-700 md:hidden"
             aria-label="Toggle navigation menu"
             onClick={() => setOpen((prev) => !prev)}
           >

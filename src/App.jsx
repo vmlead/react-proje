@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import VideoIntro from "./components/VideoIntro";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
 import Blog from "./components/Blog";
@@ -30,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100">
+    <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
       <Navbar darkMode={darkMode} onToggleTheme={toggleTheme} />
 
       <main className="relative pt-24">
@@ -44,6 +45,7 @@ function App() {
           <VideoIntro />
           <About />
           <Skills />
+          <Education />
           <Projects />
           <Certifications />
           <Blog />
