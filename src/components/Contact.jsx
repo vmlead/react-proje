@@ -1,13 +1,42 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const ref = useRef(null);
+  const form = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage('');
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then((result) => {
+      console.log(result.text);
+      setMessage('Message sent successfully!');
+      form.current.reset();
+    }, (error) => {
+      console.log(error.text);
+      setMessage('Failed to send message. Please try again.');
+    })
+    .finally(() => {
+      setIsLoading(false);
+    });
+  };
 
   return (
     <motion.section
@@ -83,6 +112,13 @@ function Contact() {
                 <a href="#" className="text-slate-400 hover:text-white">
                   Twitter
                 </a>
+                <a
+              href="/react-proje/Resume-Mar26FE.pdf"
+              download
+              className="inline-block hover:bg-green-700 text-white font-bold px-4 rounded transition duration-300"
+            >
+              Resume
+            </a>
               </div>
             </div>
           </motion.div>
@@ -95,36 +131,54 @@ function Contact() {
             <h3 className="text-2xl font-semibold text-white mb-6">
               Send Message
             </h3>
-            <form className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="user_name"
                   placeholder="Your Name"
+                  required
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500"
                 />
                 <input
                   type="email"
+                  name="user_email"
                   placeholder="Email Address"
+                  required
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500"
                 />
               </div>
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
+                required
                 className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500"
               />
               <textarea
                 rows="5"
+                name="message"
                 placeholder="Message"
+                required
                 className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 resize-none"
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-slate-100 text-slate-950 py-3 rounded-lg hover:bg-slate-200 transition-colors font-medium"
+                disabled={isLoading}
+                className="w-full bg-slate-100 text-slate-950 py-3 rounded-lg hover:bg-slate-200 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+            {message && (
+              <div className={`mt-4 p-3 rounded-lg text-sm ${
+                message.includes('successfully')
+                  ? 'bg-green-800 text-green-200'
+                  : 'bg-red-800 text-red-200'
+              }`}>
+                {message}
+              </div>
+            )}
             <p className="text-sm text-slate-500 mt-4">
               Your message is secure and confidential. I'll respond within 24 hours.
             </p>
