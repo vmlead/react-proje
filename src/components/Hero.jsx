@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import meImage from "../assets/me.png";
 
 function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+
   return (
-    <section id="home" className="min-h-screen flex items-center px-4 py-16">
+    <motion.section
+      id="home"
+      ref={ref}
+      style={{ opacity }}
+      className="min-h-screen flex items-center px-4 py-16"
+    >
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -85,7 +98,7 @@ function Hero() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

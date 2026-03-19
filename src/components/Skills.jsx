@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const techStack = {
   Frontend: ["React", "Vuejs", "JavaScript", "TypeScript", "HTML5/CSS3", "Tailwind CSS"],
@@ -8,8 +9,20 @@ const techStack = {
 };
 
 function Skills() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+
   return (
-    <section id="skills" className="py-20 bg-slate-900">
+    <motion.section
+      id="skills"
+      ref={ref}
+      style={{ opacity }}
+      className="py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +65,7 @@ function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const blogPosts = [
   {
@@ -25,8 +26,20 @@ const blogPosts = [
 ];
 
 function Blog() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+
   return (
-    <section id="blog" className="py-20">
+    <motion.section
+      id="blog"
+      ref={ref}
+      style={{ opacity }}
+      className="py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +101,7 @@ function Blog() {
           </button>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

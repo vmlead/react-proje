@@ -1,8 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 function Contact() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+
   return (
-    <section id="contact" className="py-20 bg-slate-800">
+    <motion.section
+      id="contact"
+      ref={ref}
+      style={{ opacity }}
+      className="py-20 bg-slate-800"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -118,7 +131,7 @@ function Contact() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
